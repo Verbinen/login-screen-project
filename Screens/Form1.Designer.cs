@@ -65,7 +65,7 @@
             // 
             this.tBLogin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tBLogin.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tBLogin.Location = new System.Drawing.Point(263, 76);
+            this.tBLogin.Location = new System.Drawing.Point(279, 74);
             this.tBLogin.Name = "tBLogin";
             this.tBLogin.Size = new System.Drawing.Size(121, 23);
             this.tBLogin.TabIndex = 2;
@@ -75,7 +75,7 @@
             this.tBPwd.AllowDrop = true;
             this.tBPwd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tBPwd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tBPwd.Location = new System.Drawing.Point(263, 128);
+            this.tBPwd.Location = new System.Drawing.Point(279, 126);
             this.tBPwd.Name = "tBPwd";
             this.tBPwd.Size = new System.Drawing.Size(121, 20);
             this.tBPwd.TabIndex = 3;
@@ -101,6 +101,7 @@
             this.buttonENTER.TabIndex = 5;
             this.buttonENTER.Text = "ENTER";
             this.buttonENTER.UseVisualStyleBackColor = true;
+            this.buttonENTER.Click += new System.EventHandler(this.buttonENTER_Click);
             // 
             // buttonExit
             // 
@@ -111,6 +112,7 @@
             this.buttonExit.TabIndex = 6;
             this.buttonExit.Text = "EXIT";
             this.buttonExit.UseVisualStyleBackColor = true;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
             // buttonRegister
             // 
