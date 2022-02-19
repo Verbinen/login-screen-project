@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LoginScreenProject.DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,11 +9,18 @@ namespace LoginScreenProject.Models
 {
     public class Control
     {
-        public bool has;
+        private bool hasLogin;
         public String msg = "";
         public bool Acess(String login, String pwd)
         {
-            return has;
+            LoginDaoCommands loginDao = new LoginDaoCommands();
+            this.hasLogin = loginDao.VerifyLogin(login, pwd);
+
+            if (!loginDao.msg.Equals(msg))
+            {
+                this.msg = loginDao.msg;
+            }
+            return hasLogin;
 
         }
 

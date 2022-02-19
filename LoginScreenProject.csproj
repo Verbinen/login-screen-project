@@ -46,8 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAL\Connection.cs" />
-    <Compile Include="DAL\LoginDalCommands.cs" />
+    <Compile Include="DAO\Connection.cs" />
+    <Compile Include="DAO\LoginDaoCommands.cs" />
     <Compile Include="Models\Control.cs" />
     <Compile Include="Screens\Form1.cs">
       <SubType>Form</SubType>
