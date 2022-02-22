@@ -10,7 +10,7 @@ namespace LoginScreenProject.DAL
     public class LoginDaoCommands
     {
         //private bool has;
-        public String msg = "";
+        private String msg = "";
         private SqlDataReader dr;
         SqlCommand cmd = new SqlCommand();
         Connection sqlCon = new Connection();
@@ -45,6 +45,11 @@ namespace LoginScreenProject.DAL
         {
             //commands to insert user
             return msg;
+        }
+
+        public String GetMsg()
+        {
+            return this.msg;
         }
     }
 }

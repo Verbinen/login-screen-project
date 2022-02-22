@@ -1,5 +1,6 @@
 ﻿using LoginScreenProject.Screens;
 using System;
+using LoginScreenProject.Models;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,15 +19,42 @@ namespace LoginScreenProject
             InitializeComponent();
         }
 
-        private void buttonENTER_Click(object sender, EventArgs e)
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void buttonRegister_Click(object sender, EventArgs e)
         {
             RegisterForm registerScreen = new RegisterForm();
             registerScreen.Show();
         }
 
-        private void buttonExit_Click(object sender, EventArgs e)
+        private void buttonENTER_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            ControlClass ctrl = new ControlClass();
+            ctrl.Acess(tBLogin.Text, tBPwd.Text);
+
+            if (ctrl.GetMsg().Equals(""))
+            {
+                if (ctrl.GetHasLogin())
+                {
+                    MessageBox.Show("Login Succesful", "Loading...", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    WelcomeForm wf = new WelcomeForm();
+                    wf.Show();
+                }
+                else
+                {
+                    MessageBox.Show("email or password incorrect", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+
+            }
+            else
+            {
+                MessageBox.Show(ctrl.GetMsg());
+            }
+            
         }
     }
 }
