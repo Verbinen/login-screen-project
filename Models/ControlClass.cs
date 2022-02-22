@@ -7,26 +7,36 @@ using System.Threading.Tasks;
 
 namespace LoginScreenProject.Models
 {
-    public class Control
+    public class ControlClass
     {
         private bool hasLogin;
-        public String msg = "";
-        public bool Acess(String login, String pwd)
+        private String msg = "";
+        public void Acess(String login, String pwd)
         {
             LoginDaoCommands loginDao = new LoginDaoCommands();
             this.hasLogin = loginDao.VerifyLogin(login, pwd);
 
-            if (!loginDao.msg.Equals(""))
+            String msg = loginDao.GetMsg();
+            if (!msg.Equals(""))
             {
-                this.msg = loginDao.msg;
+                this.msg = msg;
             }
-            return hasLogin;
 
         }
 
         public String Register(String email, String pwd, String pwd2)
         {
             return msg;
+        }
+
+        public bool GetHasLogin()
+        {
+            return hasLogin;
+        }
+
+        public String GetMsg()
+        {
+            return this.msg;
         }
 
     }

@@ -48,7 +48,7 @@
   <ItemGroup>
     <Compile Include="DAO\Connection.cs" />
     <Compile Include="DAO\LoginDaoCommands.cs" />
-    <Compile Include="Models\Control.cs" />
+    <Compile Include="Models\ControlClass.cs" />
     <Compile Include="Screens\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
