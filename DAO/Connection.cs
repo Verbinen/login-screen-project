@@ -12,7 +12,7 @@ namespace LoginScreenProject.DAL
         SqlConnection sqlCon = new SqlConnection();
         public Connection()
         {
-            sqlCon.ConnectionString = @"";
+            sqlCon.ConnectionString = @"Data Source=DESKTOP-DUDU\SQLEXPRESS;Initial Catalog=LoginProject;Integrated Security=True";
 
         }
 

@@ -20,7 +20,7 @@ namespace LoginScreenProject.DAL
         {
             //sql commands to verify if the login
 
-            cmd.CommandText = "select * from nomeDaTabela where email = @login and password = @pwd";
+            cmd.CommandText = "select * from login where email = @login and password = @pwd";
             cmd.Parameters.AddWithValue("@login", login); 
             cmd.Parameters.AddWithValue("@pwd", pwd); //Pega a senha gravada em pwd e insere no comando sql @pwd
 

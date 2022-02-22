@@ -16,7 +16,7 @@ namespace LoginScreenProject.Models
             LoginDaoCommands loginDao = new LoginDaoCommands();
             this.hasLogin = loginDao.VerifyLogin(login, pwd);
 
-            if (!loginDao.msg.Equals(msg))
+            if (!loginDao.msg.Equals(""))
             {
                 this.msg = loginDao.msg;
             }
