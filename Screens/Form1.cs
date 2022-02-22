@@ -24,12 +24,6 @@ namespace LoginScreenProject
             Application.Exit();
         }
 
-        private void buttonRegister_Click(object sender, EventArgs e)
-        {
-            RegisterForm registerScreen = new RegisterForm();
-            registerScreen.Show();
-        }
-
         private void buttonENTER_Click(object sender, EventArgs e)
         {
             ControlClass ctrl = new ControlClass();
@@ -54,6 +48,12 @@ namespace LoginScreenProject
                 MessageBox.Show(ctrl.GetMsg());
             }
             
+        }
+
+        private void buttonRegister_Click(object sender, EventArgs e)
+        {
+            RegisterForm rf = new RegisterForm();
+            rf.Show();
         }
     }
 }
