@@ -9,7 +9,7 @@ namespace LoginScreenProject.DAL
 {
     public class LoginDaoCommands
     {
-        //private bool has;
+        public bool has = false;
         private String msg = "";
         private SqlDataReader dr;
         SqlCommand cmd = new SqlCommand();
@@ -30,6 +30,8 @@ namespace LoginScreenProject.DAL
                 this.dr = cmd.ExecuteReader(); //Puxa info do banco executando a linha escrita
                 if (dr.HasRows)
                 {
+                    sqlCon.Disconnect();
+                    dr.Close();
                     return true;
                 }
             }
@@ -44,6 +46,28 @@ namespace LoginScreenProject.DAL
         public String Register(String email, String pwd, String pwd2)
         {
             //commands to insert user
+            if (pwd.Equals(pwd2))
+            {
+                cmd.CommandText = "insert into login values(@email, @pwd);";
+                cmd.Parameters.AddWithValue("@email", email);
+                cmd.Parameters.AddWithValue("@pwd", pwd);
+
+                try
+                {
+                    cmd.Connection = sqlCon.Connect();
+                    cmd.ExecuteNonQuery();
+                    sqlCon.Disconnect();
+                    this.msg = "Registered !";
+                    this.has = true;
+                }
+                catch (SqlException)
+                {
+                    this.msg = "Database Error";
+                }
+            }
+            else{
+                this.msg = "Passowords does not match";
+            }
             return msg;
         }
 

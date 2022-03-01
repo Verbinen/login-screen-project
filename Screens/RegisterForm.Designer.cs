@@ -47,6 +47,7 @@
             this.buttonRegisterUser.TabIndex = 0;
             this.buttonRegisterUser.Text = "Register";
             this.buttonRegisterUser.UseVisualStyleBackColor = true;
+            this.buttonRegisterUser.Click += new System.EventHandler(this.buttonRegisterUser_Click);
             // 
             // textBoxLoginRegister
             // 
@@ -63,6 +64,7 @@
             this.textBoxPasswordRegister.Name = "textBoxPasswordRegister";
             this.textBoxPasswordRegister.Size = new System.Drawing.Size(161, 26);
             this.textBoxPasswordRegister.TabIndex = 2;
+            this.textBoxPasswordRegister.UseSystemPasswordChar = true;
             // 
             // textBoxConfirmPassword
             // 

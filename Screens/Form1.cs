@@ -31,7 +31,7 @@ namespace LoginScreenProject
 
             if (ctrl.GetMsg().Equals(""))
             {
-                if (ctrl.GetHasLogin())
+                if (ctrl.has)
                 {
                     MessageBox.Show("Login Succesful", "Loading...", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     WelcomeForm wf = new WelcomeForm();

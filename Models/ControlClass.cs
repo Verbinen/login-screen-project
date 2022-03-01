@@ -9,12 +9,12 @@ namespace LoginScreenProject.Models
 {
     public class ControlClass
     {
-        private bool hasLogin;
+        public bool has;
         private String msg = "";
         public void Acess(String login, String pwd)
         {
             LoginDaoCommands loginDao = new LoginDaoCommands();
-            this.hasLogin = loginDao.VerifyLogin(login, pwd);
+            this.has = loginDao.VerifyLogin(login, pwd);
 
             String msg = loginDao.GetMsg();
             if (!msg.Equals(""))
@@ -26,12 +26,14 @@ namespace LoginScreenProject.Models
 
         public String Register(String email, String pwd, String pwd2)
         {
-            return msg;
-        }
+            LoginDaoCommands loginDao = new LoginDaoCommands();
+            this.msg = loginDao.Register(email, pwd, pwd2);
+            if (loginDao.has)
+            {
+                this.has = true;
+            }
 
-        public bool GetHasLogin()
-        {
-            return hasLogin;
+            return msg;
         }
 
         public String GetMsg()
